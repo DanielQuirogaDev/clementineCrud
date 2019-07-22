@@ -61,7 +61,7 @@ class CrudGeneratorCommand extends Command
                 // Ignore tables with different prefix
                 if($prefix == '' || str_contains($t, $prefix)) { 
                     $t = strtolower(substr($t, strlen($prefix)));
-                    $toadd = ['modelname'=> str_singular($t), 'tablename'=>''];
+                    $toadd = ['modelname'=> str_replace('_', '', ucwords($t, '_')), 'tablename'=> strtolower($t) ];
                     if(str_plural($toadd['modelname']) != $t) {
                         $toadd['tablename'] = $t;
                     } 
