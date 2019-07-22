@@ -31,10 +31,11 @@ class CrudGeneratorService
     public function Generate() 
     {
         $modelname = ucfirst(str_singular($this->modelName));
+        $altmodel = str_replace('_', '', ucwords($this->modelName, '_'));
         $this->viewFolderName = strtolower($this->controllerName);
 
         $this->output->info('');
-        $this->output->info('Creating catalogue for table: '.($this->tableName ?: strtolower(str_plural($this->modelName))));
+        $this->output->info('Creating catalogue for table: '. $modelname);
         $this->output->info('Model Name: '.$modelname);
 
 
@@ -42,7 +43,7 @@ class CrudGeneratorService
             'model_uc' => $modelname,
             'model_uc_plural' => str_plural($modelname),
             'model_singular' => strtolower($modelname),
-            'model_plural' => strtolower($modelname),
+            'model_plural' => str_plural(strtolower($modelname)),
             'tablename' => $this->tableName ?: strtolower(str_plural($this->modelName)),
             'prefix' => $this->prefix,
             'custom_master' => $this->layout ?: 'crudgenerator::layouts.master',
@@ -104,6 +105,14 @@ class CrudGeneratorService
         $this->appendToEndOfFile(base_path().'/routes/web.php', "\n".$addroute, 0, true);
         $this->output->info('Adding Route: '.$addroute );
 
+
+         $text = '<li class=""><a href="{{route(\''.$this->viewFolderName.'.index\')}}">'.$this->viewFolderName.' <span class="sr-only">(current)</span></a></li>';
+        $this->appendToEndOfFile(
+            base_path() . '/resources/views/menu.blade.php',
+            "\n".$text,
+            0,
+            true
+        );
 
     }
 
