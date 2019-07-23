@@ -159,21 +159,14 @@ class CrudGeneratorService
         Artisan::call('make:model', ['name' => $modelname]);
         
 
-        if($table_name) {
-            $this->output->info('Custom table name: '.$prefix.$table_name);
-            $this->appendToEndOfFile(app_path().'/'.$modelname.'.php', "    protected \$table = '".$table_name."';\n\n}", 2);
-        }
+        
         
 
         $columns = $this->getColumns($prefix.($table_name ?: strtolower(str_plural($modelname))));
 
         $cc = collect($columns);
 
-        if(!$cc->contains('name', 'updated_at') || !$cc->contains('name', 'created_at')) { 
-            $this->appendToEndOfFile(app_path().'/'.$modelname.'.php', "    public \$timestamps = false;\n\n}", 2, true);
-        }
-
-        $this->output->info('Model created, columns: '.json_encode($columns));
+       $this->output->info('Model created, columns: '.json_encode($columns));
         return $columns;
     }
 

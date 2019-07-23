@@ -10,9 +10,21 @@
         Listado de {{ ucfirst('[[model_plural]]') }}
     </div>
 
-    <div class="panel-body">
-        <div class="">
-            <table class="table table-striped" id="thegrid">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="panel-group joined" id="accordion-test-2">
+            <div class="panel panel-default panel-padding">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseOne-2">
+                            [[model_plural]]
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne-2" class="panel-collapse collapse in">
+                    <div class="panel-body">
+
+                        <table class="table table-bordered table-striped datatable" id="table-2">
               <thead>
                 <tr>
                     [[foreach:columns]]
@@ -54,15 +66,11 @@
 
 
 
-              </tbody>
+              </tr></tr></tbody></table>            {{ $indexes->links() }}
 
-            </table>
-            {{ $indexes->links() }}
+</div><div>        <a href="{{url('[[model_plural]]/create')}}" class="btn btn-primary" role="button">Añadir zona</a>
+    </div></div></div></div></div></div>
 
-        </div>
-        <a href="{{url('[[route_path]]/create')}}" class="btn btn-primary" role="button">Añadir [[model_singular]]</a>
-    </div>
-</div>
 
 
 
