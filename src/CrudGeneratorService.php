@@ -106,7 +106,8 @@ class CrudGeneratorService
         $this->output->info('Adding Route: '.$addroute );
 
 
-         $text = '<li class=""><a href="{{route(\''.$this->viewFolderName.'.index\')}}">'.$this->viewFolderName.' <span class="sr-only">(current)</span></a></li>';
+
+         $text = '<li class=""><a href="{{route(\''.$this->viewFolderName.'.index\')}}"><i class="entypo-list"></i>'.$this->viewFolderName.' <span class="sr-only">(current)</span></a></li>';
         $this->appendToEndOfFile(
             base_path() . '/resources/views/menu.blade.php',
             "\n".$text,
