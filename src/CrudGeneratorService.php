@@ -46,7 +46,7 @@ class CrudGeneratorService
             'model_plural' => str_plural(strtolower($modelname)),
             'tablename' => $this->tableName ?: strtolower(str_plural($this->modelName)),
             'prefix' => $this->prefix,
-            'custom_master' => $this->layout ?: 'crudgenerator::layouts.master',
+            'custom_master' => $this->layout ?: 'layouts.master',
             'controller_name' => $this->controllerName,
             'view_folder' => $this->viewFolderName,
             'route_path' => $this->viewFolderName,
