@@ -105,12 +105,7 @@ class CrudGeneratorService
         $this->appendToEndOfFile(base_path().'/routes/web.php', "\n".$addroute, 0, true);
         $this->output->info('Adding Route: '.$addroute );
 
- <li>
-            <a href="/home">
-                    <i class="entypo-home"></i>
-                    <span>Inicio</span>
-                </a>
-        </li>
+ 
 
          $text = '<li><a href="{{route(\''.$this->viewFolderName.'.index\')}}"><i class="entypo-list"></i><span>'.$this->viewFolderName.'</span></a></li>';
         $this->appendToEndOfFile(
