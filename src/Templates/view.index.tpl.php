@@ -34,8 +34,9 @@
                     [[endforeach]]
                     <th>editar</th>
                      <th>ver Detalles</th>
-                    <th style="width:50px"></th>
-                    <th style="width:50px"></th>
+                      <th>Eliminar</th>
+
+                  
                 </tr>
               </thead>
 
