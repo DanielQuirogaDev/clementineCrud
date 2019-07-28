@@ -69,7 +69,7 @@
 
               </tr></tr></tbody></table>            {{ $indexes->links() }}
 
-</div><div>        <a href="{{url('[[model_plural]]/create')}}" class="btn btn-primary" role="button">Añadir zona</a>
+</div><div>        <a href="{{url('[[model_plural]]/create')}}" class="btn btn-primary" role="button">Añadir [[model_plural]]</a>
     </div></div></div></div></div></div>
 
 

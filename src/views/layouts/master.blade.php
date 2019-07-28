@@ -10,7 +10,7 @@
 
 	<title>Cambia Tu Título</title>
 	<script src="{{ asset('js/jquery-1.10.2.min.js') }}"></script>
-
+        <link rel="icon" type="image/png" href="imagen_32.png" sizes="32x32">
 	<link rel="stylesheet" href="{{ asset('js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/font-icons/entypo/css/entypo.css') }}">
 	<link rel="stylesheet" href="{{ asset('http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic') }}">
